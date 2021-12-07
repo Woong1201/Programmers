@@ -1,0 +1,1 @@
+import redef solution(s):    dic = ['zero', 'one', 'two', 'three', 'four', 'five',           'six', 'seven', 'eight', 'nine']    for i in range(10):        s = re.sub(dic[i], str(i), s)    return int(s)s = "one4seveneight"solution(s)
