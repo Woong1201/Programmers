@@ -1,1 +1,1 @@
-# programmers 코딩테스트 연습
+# Programmers_코딩테스트 연습
