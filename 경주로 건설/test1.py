@@ -34,46 +34,27 @@ def solution(board):
         d0 = direct[0]
         d1 = direct[1]
         d2 = direct[2]
-        
         if 0<=d0[0][0]<=n and 0<=d0[0][1]<=n\
             and board[d0[0][0]][d0[0][1]]==0:
-                if dic.get(d0[0],-1)==-1 :
+                #problem
+                if dic.get(d0[0],-1)==-1 or dic[d0[0]]>=dic[d0[1]]+100:
                     dic[d0[0]] = dic[d0[1]]+100
                     route.append(d0)
-                    
-                else:
-                    if dic[d0[0]]>=dic[d0[1]]+100:
-                        dic[d0[0]] = dic[d0[1]]+100
-                        route.append(d0)
-                    elif dic[d0[1]]-400<=dic[d0[0]]:
-                        d00=direction(d0)[0]
-                        if 0<=d00[0][0]<=n and 0<=d00[0][1]<=n\
-                            and board[d00[0][0]][d00[0][1]]==0\
-                                and dic[d00[0]>=dic[d0[1]]+200]:
-                                dic[d00[0]] = dic[d0[1]]+200
-                                route.append(d00)
-                    
         if 0<=d1[0][0]<=n and 0<=d1[0][1]<=n\
             and board[d1[0][0]][d1[0][1]]==0:
+                #problem
                 if dic.get(d1[0],-1)==-1 or dic[d1[0]]>=dic[d1[1]]+600:
                     dic[d1[0]] = dic[d1[1]]+600
                     route.append(d1)
-                    
         if 0<=d2[0][0]<=n and 0<=d2[0][1]<=n\
             and board[d2[0][0]][d2[0][1]]==0:
+                #problem
                 if dic.get(d2[0],-1)==-1 or dic[d2[0]]>=dic[d2[1]]+600:
                     dic[d2[0]] = dic[d2[1]]+600
                     route.append(d2)
         
         answer = dic.get((n,n),0)
         del(route[0])
+    
+    
     return answer
-
-
-            
-        
-        
-      
-board = [[0,0,0,0,0,0,0,1],[0,0,0,0,0,0,0,0],[0,0,0,0,0,1,0,0],[0,0,0,0,1,0,0,0],[0,0,0,1,0,0,0,1],[0,0,1,0,0,0,1,0],[0,1,0,0,0,1,0,0],[1,0,0,0,0,0,0,0]]
-#board = [[0,0,0],[0,0,0],[0,0,0]]
-solution(board)
