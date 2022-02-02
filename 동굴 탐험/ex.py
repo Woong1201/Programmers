@@ -1,9 +1,8 @@
 
-y = [[3,4],1,2]
-x = [1,2,3,4]
-x[-2:]
-y.remove(x[-2:])
-y
+x= {i : [0] for i in range(8)}
 
-dic ={0:0}
-print(dic.get(1,-1))
+
+x[4] += [1,2,3] + [4]
+x=[1,2,3,4]
+x.remove(3)
+print(x)

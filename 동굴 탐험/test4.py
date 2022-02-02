@@ -1,21 +1,26 @@
 def solution(n, path, order):
-    dic_after = {i:[] for i in range(n)}
-    dic_before = {i:[] for i in range(n)}
+    dic = {}
+    for i in range(n):
+        dic[i] = [[],[]]
     route = [0]
-
-
-    while path:
-        p = path.pop()
-        dic_after[p[0]] += [p[1]]
-        dic_after[p[1]] += [p[0]]
     
-    route = [0]
     while route:
-        r = route.pop()
-        route += dic_after[r]
-        for i in dic_after[r]:
-            dic_after[i].remove(r)
-            dic_before[i] += dic_before[r] +[r]
+        loc = route[-1]
+        for i in range(len(path)):
+            if loc == path[i][0]:
+                route.append(path[i][1])
+                del path[i]
+                break
+            elif loc == path[i][1]:
+                route.append(path[i][0])
+                del path[i]
+                break
+        else :
+            p = route.pop()
+            dic[p][0] += route
+            for i in route:
+                dic[i][1].append(p)
+
 
     t = 0
     while t != len(order):
