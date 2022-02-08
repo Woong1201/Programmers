@@ -3,7 +3,6 @@ def solution(n, path, order):
     dic_before = {i:[] for i in range(n)}
     route = [0]
 
-
     while path:
         p = path.pop()
         dic_after[p[0]] += [p[1]]
@@ -21,7 +20,6 @@ def solution(n, path, order):
             dic_after[i].remove(r)
             dic_before[i] += dic_before[r] 
 
-    
     for i in range(n):
         dic_after[i] = set(dic_after[i])
         dic_before[i] = set(dic_before[i])
@@ -44,7 +42,6 @@ def solution(n, path, order):
                 dic_before[i] |= dic_before[o0]
             dic_before[o1] |= dic_before[o0]
         
-    
     return True
 
 

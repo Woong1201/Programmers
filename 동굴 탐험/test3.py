@@ -67,5 +67,3 @@ order = [[4,3],[8,7],[6,1]]
 False
 
 print(solution(n, path, order))
-
-#018 012 036 074 075

@@ -76,4 +76,5 @@ False
 
 print(solution(n, path, order))
 
+#효율성 실패
 #018 012 036 074 075
