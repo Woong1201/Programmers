@@ -1,8 +1,8 @@
+x = set([])
+x |= set([1])
+print(x)
 
-x= {i : [0] for i in range(8)}
+print(3 in x)
 
-
-x[4] += [1,2,3] + [4]
-x=[1,2,3,4]
-x.remove(3)
+x= input()
 print(x)
